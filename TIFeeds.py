@@ -52,7 +52,7 @@ for intel_file in intel_files:
             row = {
                 "domain": "",  # Leave empty if not available
                 "category": row_data[4] if len(row_data) > 4 else "",  # Use meta.desc as category
-                "score": "",  # Leave empty if not available
+                "score": 0.0,  # Default score as 0.0 (float) if not available
                 "first_seen": placeholder_date,  # Use placeholder date
                 "last_seen": placeholder_date,  # Use placeholder date
                 "ports": "",  # Leave empty if not available
