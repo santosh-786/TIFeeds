@@ -1,5 +1,3 @@
-
-
 # URL to the raw .intel file in the source repository
 #intel_file_url = "https://raw.githubusercontent.com/CriticalPathSecurity/Zeek-Intelligence-Feeds/refs/heads/master/compromised-ips.intel"
 import csv
@@ -22,9 +20,6 @@ fixed_header = ["domain", "category", "score", "first_seen", "last_seen", "ports
 # List to store all rows from all CSV files
 all_rows = []
 
-# Get current timestamp for filenames
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # Format: YYYYMMDD_HHMMSS
-
 # Placeholder date for first_seen and last_seen (in yyyy-mm-dd format)
 placeholder_date = datetime.now().strftime("%Y-%m-%d")  # Today's date in yyyy-mm-dd format
 
@@ -38,8 +33,8 @@ for intel_file in intel_files:
     # Remove the header (first line)
     lines = lines[1:]
 
-    # Convert to CSV and save with timestamp
-    csv_file_name = f"{os.path.splitext(intel_file)[0]}_{timestamp}.csv"  # Add timestamp to filename
+    # Convert to CSV and save
+    csv_file_name = f"{os.path.splitext(intel_file)[0]}.csv"  # Use the same filename without timestamp
     with open(csv_file_name, mode='w', newline='', encoding='utf-8') as csv_file:
         csv_writer = csv.DictWriter(csv_file, fieldnames=fixed_header)
         csv_writer.writeheader()  # Write the fixed header
@@ -66,8 +61,8 @@ for intel_file in intel_files:
 
     print(f"Converted {intel_file} to {csv_file_name}")
 
-# Save all rows to a single all.csv file with timestamp
-all_csv_file_name = f"all_{timestamp}.csv"
+# Save all rows to a single all.csv file
+all_csv_file_name = "all.csv"
 with open(all_csv_file_name, mode='w', newline='', encoding='utf-8') as all_csv_file:
     csv_writer = csv.DictWriter(all_csv_file, fieldnames=fixed_header)
     csv_writer.writeheader()  # Write the fixed header
