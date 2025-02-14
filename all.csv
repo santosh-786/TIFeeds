@@ -1,4 +1,4 @@
-indicator,indicator_type,meta.source,meta.do_notice,meta.desc
+ip,type,category,score,meta.desc
 85.242.56.157,Intel::ADDR,ABUSE-CH,F,THREATFOX
 85.242.56.157,Intel::ADDR,ABUSE-CH,F,THREATFOX
 146.59.86.177,Intel::ADDR,ABUSE-CH,F,THREATFOX
