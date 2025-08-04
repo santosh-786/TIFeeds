@@ -35,5 +35,5 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add *.csv  # Add all CSV files
-        git commit -m "Automated daily update: Convert multiple .intel files to CSV"
+        git commit -m "Automated daily update"
         git push
